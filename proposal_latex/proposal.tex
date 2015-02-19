@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{multicol}
+\usepackage{graphicx,amsmath,listings,hyperref,color,appendix,geometry}
+\usepackage[english]{babel}
+\begin{document} 
+\begin{figure}[!bh]
+ 	\begin{center}
+		\huge \title{HTTP2}
+		\author{ Martin Leucht, James Gratchoff \\
+		Master SNE, UvA} 
+		\date{December 2014\\}
+	\maketitle 
+		\label{sec:uva}
+	\end{center}
+\end{figure}
+\pagenumbering{gobble}
+\setlength{\columnsep}{2cm}
+\def\columnseprulecolor{\color{blue}}
+ 
+\begin{multicols}{2}
+\pagenumbering{arabic}
+\section{Introduction}
+\input{sections/introduction.tex}
+\section{Research Questions}
+\input{sections/rq.tex}
+\section{Related work}
+\input{sections/related.tex}
+\section{Scope}
+\input{sections/scope.tex}
+\section{Method}
+\input{sections/method.tex}
+\section{Requirements}
+\input{sections/requirements.tex}
+\section{Expected results}
+\input{sections/expected.tex}
+
+\begin{thebibliography}
+\\
+\end{thebibliography}
+\newpage
+\appendix
+
+\end{multicols}
+\end{document}
