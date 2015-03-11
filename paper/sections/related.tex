@@ -1,0 +1,17 @@
+\section{Literature review}
+\label{relwork}
+\subsection{HTTP/1.1 drawbacks}
+Where is http/1.1 lacking in terms of performance and protocol implementation.
+\subsection{HTTP/2 improvements}
+What are the reasons to move to http/2 and how did it improve http/1.1.
+\subsubsection{Binary format}
+\subsubsection{Multiplexing and priorities}
+\subsubsection{Header compression}
+\subsubsection{Flow control}
+\subsubsection{Server push}
+
+\subsection{Related work}
+The new HTTP2 protocol has been based on the SPDY protocol developed mainly by Google. As shown by Google \cite{google2x}, the SPDY protocol meets its expectations by reducing the loading time of web pages by 55\%. Other people have tried to look into the protocol and one of the most interesting analysis has been done by Servy\cite{servy}. Servy evaluated the performance of the web servers implementing the SPDY protocol comparing it to HTTP/1.1 and HTTPS. The load testing tool used for this benchmark was the NeoLoad 4.1.2. His results showed that the implementation of SPDY increases by a factor of 6 the number concurrent of users possible before errors start showing up in comparison to HTTP and HTTPS. 
+A contradictory study showing some boundaries of implementing SPDY has been done by Podjarny\cite{podiatry}. He shows that most of the websites use different domains and as SPDY works on a per-domain basis it does not necessarily help it to be faster. Finally, Wang et al.\cite{wang} have investigated the performance of SPDY for the improvements of the protocol compared to HTTP/1.1. This study highlights that SPDY is much faster since its benefits from the single TCP connection mechanism. However, they also mention that SPDY degrades under high packet loss compared to HTTP. 
+Concerning the new standard HTTP/2 a few benchmarks have been performed by the creators of different client/server platforms. They reach the same conclusion for SPDY. \\
+However, studies on comparisons between HTTP/2 (draft-ietf-httpbis-http2-14 \cite{h2c-14} ) and HTTP/1.1 with regards to concurrent clients and increasing amount of requests in different geographical locations and different page sizes or amount of elements a webpage contains, have not been conducted yet.
