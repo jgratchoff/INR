@@ -1,0 +1,41 @@
+
+# Amazon Ireland
+
+GMT 0 Test started Fri Mar 13 16:19
+
+
+root@ip-10-84-180-27:/opt/lia# traceroute warsaw.practicum.os3.nl
+traceroute to warsaw.practicum.os3.nl (145.100.104.62), 30 hops max, 60 byte packets
+ 1  ip-10-115-17-193.eu-west-1.compute.internal (10.115.17.193)  0.858 ms  1.160 ms  1.409 ms
+ 2  100.74.169.19 (100.74.169.19)  0.462 ms 100.74.169.20 (100.74.169.20)  0.802 ms 100.74.169.22 (100.74.169.22)  0.629 ms
+ 3  100.74.169.32 (100.74.169.32)  0.653 ms 100.74.169.41 (100.74.169.41)  0.612 ms 100.74.169.44 (100.74.169.44)  0.445 ms
+ 4  ip-10-178-170-6.eu-west-1.compute.internal (10.178.170.6)  0.613 ms ip-10-178-98-5.eu-west-1.compute.internal (10.178.98.5)  0.522 ms ip-10-178-170-6.eu-west-1.compute.internal (10.178.170.6)  0.609 ms
+ 5  ip-10-178-137-58.eu-west-1.compute.internal (10.178.137.58)  1.904 ms ip-10-178-91-178.eu-west-1.compute.internal (10.178.91.178)  2.375 ms ip-10-178-181-254.eu-west-1.compute.internal (10.178.181.254)  1.252 ms
+ 6  100.64.70.195 (100.64.70.195)  6.582 ms 100.64.70.103 (100.64.70.103)  0.751 ms 100.64.69.51 (100.64.69.51)  1.429 ms
+ 7  100.64.79.216 (100.64.79.216)  0.858 ms 100.64.78.212 (100.64.78.212)  9.277 ms 100.64.64.22 (100.64.64.22)  1.218 ms
+ 8  100.64.21.128 (100.64.21.128)  0.395 ms 100.64.21.208 (100.64.21.208)  0.347 ms 100.64.21.146 (100.64.21.146)  0.403 ms
+ 9  ip-10-1-37-58.eu-west-1.compute.internal (10.1.37.58)  0.812 ms ip-10-1-37-42.eu-west-1.compute.internal (10.1.37.42)  3.625 ms ip-10-1-37-52.eu-west-1.compute.internal (10.1.37.52)  0.926 ms
+10  ec2-79-125-0-136.eu-west-1.compute.amazonaws.com (79.125.0.136)  0.465 ms ec2-79-125-0-202.eu-west-1.compute.amazonaws.com (79.125.0.202)  1.370 ms ec2-79-125-0-132.eu-west-1.compute.amazonaws.com (79.125.0.132)  7.916 ms
+11  178.236.0.212 (178.236.0.212)  0.642 ms 178.236.1.188 (178.236.1.188)  0.849 ms 178.236.0.212 (178.236.0.212)  0.641 ms
+12  178.236.0.222 (178.236.0.222)  1.031 ms  1.065 ms  1.021 ms
+13  176.32.106.35 (176.32.106.35)  10.478 ms  10.996 ms 176.32.106.26 (176.32.106.26)  10.715 ms
+14  178.236.3.52 (178.236.3.52)  10.454 ms 54.239.100.158 (54.239.100.158)  83.726 ms 54.239.100.16 (54.239.100.16)  23.236 ms
+15  jnr01.asd002a.surf.net (195.66.225.122)  17.634 ms 54.239.100.49 (54.239.100.49)  10.430 ms jnr01.asd002a.surf.net (195.66.225.122)  17.729 ms
+16  snb-router.Customer.surf.net (145.145.19.186)  18.726 ms jnr01.asd002a.surf.net (195.66.225.122)  17.708 ms snb-router.Customer.surf.net (145.145.19.186)  18.349 ms
+17  warsaw.studlab.os3.nl (145.100.104.62)  18.227 ms  18.119 ms  18.245 ms
+root@ip-10-84-180-27:/opt/lia# ping -c 10 warsaw.practicum.os3.nl
+PING warsaw.practicum.os3.nl (145.100.104.62) 56(84) bytes of data.
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=1 ttl=47 time=18.1 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=2 ttl=47 time=18.1 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=3 ttl=47 time=18.1 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=4 ttl=47 time=18.0 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=5 ttl=47 time=18.0 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=6 ttl=47 time=18.1 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=7 ttl=47 time=18.0 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=8 ttl=47 time=18.0 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=9 ttl=47 time=18.0 ms
+64 bytes from warsaw.studlab.os3.nl (145.100.104.62): icmp_seq=10 ttl=47 time=18.1 ms
+
+--- warsaw.practicum.os3.nl ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9011ms
+rtt min/avg/max/mdev = 18.081/18.104/18.158/0.106 ms
