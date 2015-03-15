@@ -24,6 +24,7 @@ root@warsaw:/etc/apache2# cat mods-enabled/mpm_prefork.conf
 	MaxConnectionsPerChild   0
 </IfModule>
 
+New v1 measurement
 
 <IfModule mpm_prefork_module>
         ServerLimit             750
