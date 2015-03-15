@@ -1,0 +1,40 @@
+error.log Apache 
+
+[Sun Mar 15 14:30:40.444849 2015] [mpm_prefork:error] [pid 3470] AH00161: server reached MaxRequestWorkers setting, consider raising the MaxRequestWorkers setting
+
+root@warsaw:/etc/apache2# service apache2 restart
+ * Restarting web server apache2                                                                                                                                            AH00180: WARNING: MaxRequestWorkers of 750 exceeds ServerLimit value of
+ 256 servers, decreasing MaxRequestWorkers to 256.
+ To increase, please see the ServerLimit directive.
+
+
+root@warsaw:/etc/apache2# cat mods-enabled/mpm_prefork.conf 
+# prefork MPM
+# StartServers: number of server processes to start
+# MinSpareServers: minimum number of server processes which are kept spare
+# MaxSpareServers: maximum number of server processes which are kept spare
+# MaxRequestWorkers: maximum number of server processes allowed to start
+# MaxConnectionsPerChild: maximum number of requests a server process serves
+
+<IfModule mpm_prefork_module>
+	StartServers			 5
+	MinSpareServers		  5
+	MaxSpareServers		 10
+	MaxRequestWorkers	  750
+	MaxConnectionsPerChild   0
+</IfModule>
+
+
+<IfModule mpm_prefork_module>
+        ServerLimit             750
+        StartServers                     5
+        MinSpareServers           5
+        MaxSpareServers          10
+        MaxRequestWorkers         750
+        MaxConnectionsPerChild   0
+</IfModule>
+
+root@warsaw:/etc/apache2# vi mods-enabled/mpm_prefork.conf 
+root@warsaw:/etc/apache2# service apache2 restart
+ * Restarting web server apache2                                                                                                                                     [ OK ] 
+
