@@ -1,0 +1,2 @@
+nghttpx -n 18 -f0.0.0.0,8443 -b127.0.0.1,80 -b127.0.0.1,80 /var/www/nghttp2/keys/domain.key /var/www/html/keys/domain.crt
+nghttpd -d /var/www/nghttp2/ -b0 -n 18 8881 keys/domain.key keys/domain.crt
