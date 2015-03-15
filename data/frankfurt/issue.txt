@@ -40,3 +40,33 @@ root@warsaw:/etc/apache2# vi mods-enabled/mpm_prefork.conf
 root@warsaw:/etc/apache2# service apache2 restart
  * Restarting web server apache2                                                                                                                                     [ OK ] 
 
+# but also 
+
+15/Mar/2015:16:30:08 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:08 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae2c0ee00] socket() failed; errno=24
+15/Mar/2015:16:30:08 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:09 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae240ba80] socket() failed; errno=24
+15/Mar/2015:16:30:09 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:10 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae2018100] socket() failed; errno=24
+15/Mar/2015:16:30:10 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:12 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0aeac47e80] socket() failed; errno=24
+15/Mar/2015:16:30:12 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:12 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae4837b00] socket() failed; errno=24
+15/Mar/2015:16:30:12 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:14 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0aebc52700] socket() failed; errno=24
+15/Mar/2015:16:30:14 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:15 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae2019280] socket() failed; errno=24
+15/Mar/2015:16:30:15 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 8
+15/Mar/2015:16:30:15 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae1c0b300] socket() failed; errno=24
+15/Mar/2015:16:30:15 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:16 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae400ae00] socket() failed; errno=24
+15/Mar/2015:16:30:16 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:18 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae240d600] socket() failed; errno=24
+15/Mar/2015:16:30:18 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:22 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae2406800] socket() failed; errno=24
+15/Mar/2015:16:30:22 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 8
+15/Mar/2015:16:30:25 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae1c0bd00] socket() failed; errno=24
+15/Mar/2015:16:30:25 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+15/Mar/2015:16:30:30 +0100 PID13053 [WARN] shrpx_http_downstream_connection.cc:156 [DCONN:0x7f0ae2c0c380] socket() failed; errno=24
+15/Mar/2015:16:30:30 +0100 PID13053 [WARN] shrpx_connect_blocker.cc:59 connect failure, start sleeping 4
+
