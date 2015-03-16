@@ -1,18 +1,18 @@
 set grid nopolar
-set output 'plot/Header traffic (for large files)-Local.pdf'
-set yrange [0:300]
+set output 'plot/Latency-local(RTT=0.340).pdf'
+set yrange [0:350]
 set xrange [0:800]
 set term pdf
 set style data lines
 set datafile separator ","
-set title "Mean Latency depending on the number of clients "
+set title "Mean Latency for HTTP/1.1 and HTTP/2 depending on the number of clients \n and the size of the pages with an RTT=0.340ms"
 set xlabel "Number of clients"
-set ylabel "Average total header size"
+set ylabel "Mean Latency (in ms)"
 
-plot "report_http_urls_large_v2_1426332603.csv" using 2:11 w errorb smooth sbezier t "Large file-http2", \
-	"report_http_urls_large_v1_1426341585.csv" using 2:11 smooth sbezier t "Large file-http1", \
-	"report_http_urls_small_v1_1426335453.csv" using 2:11 smooth sbezier t "Small file-http1", \
-	"report_http_urls_small_v2_1426327089.csv" using 2:11 smooth sbezier t "Small file-http2"
+plot "report_http_urls_large_v2_1426332603.csv" using 2:11 smooth sbezier t "200Kb file-HTTP/2", \
+	"report_http_urls_small_v2_1426327089.csv" using 2:11 smooth sbezier t "20Kb file-HTTP/2", \
+	"report_http_urls_large_v1_1426341585.csv" using 2:11 smooth sbezier t "200Kb file-HTTP/1.1", \
+	"report_http_urls_small_v1_1426335453.csv" using 2:11 smooth sbezier t "20Kb file-HTTP/1.1"
 
 
 

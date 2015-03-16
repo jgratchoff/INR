@@ -1,0 +1,15 @@
+set grid nopolar
+set output '../plot/DiffLatency(smallpage).pdf'
+set yrange [-50:200]
+set xrange [0:800]
+set term pdf
+set style data lines
+set datafile separator ","
+set title "Mean Difference of Latency depending on the number of clients\n between HTTP/1.1 and HTTP/2 pages of 20Kb\n tested with different locations"
+set xlabel "Number of clients"
+set ylabel "Difference of Mean Latency (in ms)"
+
+plot	"diff.csv" using 1:8 smooth sbezier t "Frankfurt-RTT=6.756", \
+	"diff.csv" using 1:26 smooth sbezier t "Local-RTT=0.340", \
+	"diff.csv" using 1:34 smooth sbezier t "California-RTT=148.570", \
+	"diff.csv" using 1:17 smooth sbezier t "Tokyo-RTT=283.207"

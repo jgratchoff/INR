@@ -1,0 +1,21 @@
+set grid nopolar
+set output 'plot/Failed packets per number of clients(NA).pdf'
+set yrange [0:50]
+set xrange [0:800]
+set term pdf
+set style data lines
+set datafile separator ","
+set title "Mean number of failed packets depending on the number of clients  "
+set xlabel "Number of clients"
+set ylabel "Average number of packet fail"
+
+plot "report_http_urls_large_v2_1426493973.csv" using 1:14 smooth sbezier t "Large file-http2", \
+        "report_http_urls_large_v1_1426503558.csv" using 1:14 smooth sbezier t "Large file-http1", \
+        "report_http_urls_small_v2_1426458705.csv" using 1:14 smooth sbezier t "Small file-http2", \
+        "report_http_urls_small_v1_1426497692.csv" using 1:14 smooth sbezier t "Small file-http1"
+
+
+
+
+#plot "report_http_urls_large_v1_1426341585.csv" using 2:11 t "experimental" w errorb,               "" smooth sbezier t ""
+

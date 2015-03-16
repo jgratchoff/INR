@@ -1,0 +1,9 @@
+,,http1,http2
+Frankfurt RTT=6.756,small,11422,0
+,large,11424,0
+Tokyo   RTT=283.207,small,24,0
+,large,28,0
+California RTT=148.570,small,270,0
+,large,41,0
+Local    RTT=0.240,small,0,0
+,large,22,0
