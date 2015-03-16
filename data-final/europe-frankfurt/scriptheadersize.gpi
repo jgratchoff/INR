@@ -1,18 +1,22 @@
 set grid nopolar
 set output 'plot/Headertraffic-frankfurt(RTT=6.756).pdf'
 set yrange [0:100000]
-set xrange [0:800]
+set xrange [0:750]
 set term pdf
 set style data lines
 set datafile separator ","
-set title "Mean header traffic for HTTP/1.1 and HTTP/2 depending on the number of \n clients and the size of the pages with an RTT=6.756ms"
+set title "Mean header traffic for HTTP/1.1 and HTTP/2 depending on the number of \n clients and the size of the pages with a RTT=6.756ms"
 set xlabel "Number of clients"
-set ylabel "Average total header size (bits)"
+set ylabel "Average total header size (Bytes)"
+set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
+set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
+set style line 3 lt 1 lw 3 pt 3 linecolor rgb "blue"
+set style line 4 lt 1 lw 3 pt 3 
 
-plot "report_http_urls_large_v2_1426424392.csv" using 1:6 smooth sbezier t "200Kb file-HTTP/2", \
-        "report_http_urls_small_v2_1426421038.csv" using 1:6 smooth sbezier t "20Kb file-HTTP/2", \
-        "report_http_urls_large_v1_1426436384.csv" using 1:6 smooth sbezier t "200Kb file-HTTP/1.1", \
-        "report_http_urls_small_v1_1426431907.csv" using 1:6 smooth sbezier t "20Kb file-HTTP/1.1"
+plot "report_http_urls_large_v2_1426424392.csv" using 1:6 ls 1 smooth sbezier t "200kB file-HTTP/2", \
+        "report_http_urls_small_v2_1426421038.csv" using 1:6 ls 2 smooth sbezier t "20kB file-HTTP/2", \
+        "report_http_urls_large_v1_1426436384.csv" using 1:6 ls 3  smooth sbezier t "200kB file-HTTP/1.1", \
+        "report_http_urls_small_v1_1426431907.csv" using 1:6 ls 4 smooth sbezier t "20kB file-HTTP/1.1"
 
 
 

@@ -1,0 +1,20 @@
+set grid nopolar
+set output 'plot/Latency-v1vsv2.pdf'
+set yrange [0:400]
+set xrange [0:750]
+set term pdf
+set style data lines
+set datafile separator ","
+set title "Mean Time for HTTP/1.1 and HTTP/2 requests depending on the number of \n clients and the size of the pages with a RTT=0.176ms"
+set xlabel "Number of clients"
+set ylabel "Mean Latency (in ms)"
+set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
+set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
+
+plot "report_http_urls_large_v2_1426527176.csv" using 2:11 ls 1 smooth sbezier t "200kB file-HTTP/2", \
+	"report_http_urls_large_v1_1426527174.csv" using 2:11 ls 2 smooth sbezier t "200kB file-HTTP/1.1", \
+
+
+
+#plot "report_http_urls_large_v1_1426341585.csv" using 2:11 t "experimental" w errorb,               "" smooth sbezier t ""
+

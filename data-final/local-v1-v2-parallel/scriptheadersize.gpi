@@ -1,0 +1,18 @@
+set grid nopolar
+set output 'plot/Headertraffic-v1vsv2.pdf'
+ 	set yrange [0:100000]
+set xrange [0:750]
+set term pdf
+set style data lines
+set datafile separator ","
+set title "Mean header traffic for HTTP/1.1 and HTTP/2 depending on the number of \n clients and the size of the pages with a RTT=6.756ms"
+set xlabel "Number of clients"
+set ylabel "Average total header size (Bytes)"
+set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
+set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
+
+plot "report_http_urls_large_v2_1426527176.csv" using 2:7 ls 1 smooth sbezier t "200kB file-HTTP/2", \
+	"report_http_urls_large_v1_1426527174.csv" using 2:7 ls 2 smooth sbezier t "200kB file-HTTP/1.1"
+
+
+

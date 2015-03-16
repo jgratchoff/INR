@@ -1,15 +1,19 @@
 set grid nopolar
-set output 'plot/DiffLatency.pdf'
+set output '../plot/DiffLatency.pdf'
 set yrange [-10:200]
-set xrange [0:800]
+set xrange [0:750]
 set term pdf
 set style data lines
 set datafile separator ","
-set title "Mean Difference of Latency depending on the number of clients\n between HTTP/1.1 and HTTP/2 pages of 200KB\n tested with different locations"
+set title "Mean Difference of time for requests depending on the number of clients\n between HTTP/1.1 and HTTP/2 pages of 200kB\n tested with different locations"
 set xlabel "Number of clients"
 set ylabel "Difference of Mean Latency (in ms)"
+set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
+set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
+set style line 3 lt 1 lw 3 pt 3 linecolor rgb "blue"
+set style line 4 lt 1 lw 3 pt 3  
 
-plot	"diff.csv" using 1:4 smooth sbezier t "Frankfurt-RTT=6.756", \
-	"diff.csv" using 1:22 smooth sbezier t "Local-RTT=0.340", \
-	"diff.csv" using 1:30 smooth sbezier t "California-RTT=148.570", \
-	"diff.csv" using 1:13 smooth sbezier t "Tokyo-RTT=283.207"
+plot	"diff.csv" using 1:4 ls 1 smooth sbezier t "Frankfurt-RTT=6.756", \
+	"diff.csv" using 1:22 ls 2 smooth sbezier t "Local-RTT=0.340", \
+	"diff.csv" using 1:30 ls 3 smooth sbezier t "California-RTT=148.570", \
+	"diff.csv" using 1:13 ls 4 smooth sbezier t "Tokyo-RTT=283.207"
