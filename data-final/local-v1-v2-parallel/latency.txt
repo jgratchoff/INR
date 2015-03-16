@@ -1,0 +1,43 @@
+root@traveller:/opt/lia# ping -c 10 145.100.104.62
+PING 145.100.104.62 (145.100.104.62) 56(84) bytes of data.
+64 bytes from 145.100.104.62: icmp_seq=1 ttl=62 time=0.198 ms
+64 bytes from 145.100.104.62: icmp_seq=2 ttl=62 time=0.201 ms
+64 bytes from 145.100.104.62: icmp_seq=3 ttl=62 time=0.160 ms
+64 bytes from 145.100.104.62: icmp_seq=4 ttl=62 time=0.167 ms
+64 bytes from 145.100.104.62: icmp_seq=5 ttl=62 time=0.214 ms
+64 bytes from 145.100.104.62: icmp_seq=6 ttl=62 time=0.151 ms
+64 bytes from 145.100.104.62: icmp_seq=7 ttl=62 time=0.157 ms
+64 bytes from 145.100.104.62: icmp_seq=8 ttl=62 time=0.167 ms
+64 bytes from 145.100.104.62: icmp_seq=9 ttl=62 time=0.152 ms
+64 bytes from 145.100.104.62: icmp_seq=10 ttl=62 time=0.174 ms
+
+--- 145.100.104.62 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8999ms
+rtt min/avg/max/mdev = 0.151/0.174/0.214/0.022 ms
+root@traveller:/opt/lia# traceroute -In 145.100.104.62
+traceroute to 145.100.104.62 (145.100.104.62), 30 hops max, 60 byte packets
+ 1  145.100.106.65  0.235 ms  0.234 ms  0.231 ms
+ 2  145.100.104.62  0.226 ms  0.220 ms  0.217 ms
+
+root@traveller2:/opt/lia# ping -c 10 145.100.104.62
+PING 145.100.104.62 (145.100.104.62) 56(84) bytes of data.
+64 bytes from 145.100.104.62: icmp_seq=1 ttl=62 time=0.179 ms
+64 bytes from 145.100.104.62: icmp_seq=2 ttl=62 time=0.157 ms
+64 bytes from 145.100.104.62: icmp_seq=3 ttl=62 time=0.181 ms
+64 bytes from 145.100.104.62: icmp_seq=4 ttl=62 time=0.180 ms
+64 bytes from 145.100.104.62: icmp_seq=5 ttl=62 time=0.181 ms
+64 bytes from 145.100.104.62: icmp_seq=6 ttl=62 time=0.163 ms
+64 bytes from 145.100.104.62: icmp_seq=7 ttl=62 time=0.188 ms
+64 bytes from 145.100.104.62: icmp_seq=8 ttl=62 time=0.159 ms
+64 bytes from 145.100.104.62: icmp_seq=9 ttl=62 time=0.194 ms
+64 bytes from 145.100.104.62: icmp_seq=10 ttl=62 time=0.179 ms
+
+--- 145.100.104.62 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8998ms
+rtt min/avg/max/mdev = 0.157/0.176/0.194/0.013 ms
+
+root@traveller2:/opt/lia# traceroute -In 145.100.104.62
+traceroute to 145.100.104.62 (145.100.104.62), 30 hops max, 60 byte packets
+ 1  145.100.106.65  0.170 ms  0.168 ms  0.164 ms
+ 2  145.100.104.62  0.253 ms  0.255 ms  0.252 ms
+
