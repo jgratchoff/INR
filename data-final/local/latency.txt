@@ -1,0 +1,25 @@
+Sat Mar 14 09:58:09 2015
+
+GMT +00
+
+root@traveller:/opt/lia# traceroute -n 145.100.104.62
+traceroute to 145.100.104.62 (145.100.104.62), 30 hops max, 60 byte packets
+ 1  145.100.106.65  0.119 ms  0.105 ms  0.108 ms
+ 2  145.100.104.62  0.400 ms  0.369 ms  0.335 ms
+root@traveller:/opt/lia# ping -c 10 145.100.104.62
+PING 145.100.104.62 (145.100.104.62) 56(84) bytes of data.
+64 bytes from 145.100.104.62: icmp_seq=1 ttl=62 time=0.366 ms
+64 bytes from 145.100.104.62: icmp_seq=2 ttl=62 time=0.292 ms
+64 bytes from 145.100.104.62: icmp_seq=3 ttl=62 time=0.372 ms
+64 bytes from 145.100.104.62: icmp_seq=4 ttl=62 time=0.385 ms
+64 bytes from 145.100.104.62: icmp_seq=5 ttl=62 time=0.229 ms
+64 bytes from 145.100.104.62: icmp_seq=6 ttl=62 time=0.306 ms
+64 bytes from 145.100.104.62: icmp_seq=7 ttl=62 time=0.362 ms
+64 bytes from 145.100.104.62: icmp_seq=8 ttl=62 time=0.342 ms
+64 bytes from 145.100.104.62: icmp_seq=9 ttl=62 time=0.365 ms
+64 bytes from 145.100.104.62: icmp_seq=10 ttl=62 time=0.381 ms
+
+--- 145.100.104.62 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8997ms
+rtt min/avg/max/mdev = 0.229/0.340/0.385/0.047 ms
+
