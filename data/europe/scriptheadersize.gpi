@@ -1,0 +1,20 @@
+set grid nopolar
+set output 'plot/Header traffic (for all files ).pdf'
+set yrange [0:100000]
+set xrange [0:800]
+set term pdf
+set style data lines
+set datafile separator ","
+set title "Mean header traffic on a large http1.1 and http2 depending on the number of clients "
+set xlabel "Number of clients"
+set ylabel "Average total header size"
+
+plot "report_http_urls_large_v2_1426424392.csv" using 1:6 w errorb smooth sbezier t "Large file-http2", \
+        "report_http_urls_large_v1_1426436384.csv" using 1:6 smooth sbezier t "Large file-http1", \
+        "report_http_urls_small_v2_1426421038.csv" using 1:6 smooth sbezier t "Small file-http2", \
+        "report_http_urls_small_v1_1426431907.csv" using 1:6 smooth sbezier t "Small file-http1"
+
+
+
+#plot "report_http_urls_large_v1_1426341585.csv" using 2:11 t "experimental" w errorb,               "" smooth sbezier t ""
+

@@ -1,0 +1,20 @@
+set grid nopolar
+set output 'Latency with standarddev.pdf'
+set yrange [0:400]
+set xrange [0:800]
+set term pdf
+set style data lines
+set datafile separator ","
+set title "Mean latency with sd on a large and small http1.1 and http2 file depending on the number of clients "
+set xlabel "Number of clients"
+set ylabel "Latency(in ms)"
+set bars small
+plot "report_http_urls_large_v2_1426332603.csv" using 2:11:12 w yerrorb  t "Large file-http2", \
+	"report_http_urls_large_v1_1426341585.csv" using 2:11:12 w yerrorb t "Large file-http1"
+#	"report_http_urls_small_v1_1426335453.csv" using 2:11:12 w yerrorb  t "Small file-http1", \
+#	"report_http_urls_small_v2_1426327089.csv" using 2:11:12 w yerrorb  t "Small file-http2"
+
+
+
+#plot "report_http_urls_large_v1_1426341585.csv" using 2:11 t "experimental" w errorb,               "" smooth sbezier t ""
+

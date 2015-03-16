@@ -1,0 +1,20 @@
+#set grid nopolar
+set output 'Pckt_failed.pdf'
+#set yrange [0:10]
+set xrange [0:20]
+set term pdf
+#set style data lines
+set datafile separator ","
+set title "Packet failed per location differenciating http1 and 2"
+#set xlabel "Number of clients"
+#set ylabel "Average total header size"
+
+
+
+#set xtics ("Frankfurt" 0.25, "Tokyo" 1.75, "Local" 3.25)
+
+set boxwidth 0.5
+set style fill solid
+
+plot 'pcktf.csv' using 3:4:xtic(2) with boxes, \
+     'pcktf.csv' using 3:4:xtic(2) with boxes
