@@ -1,0 +1,14 @@
+set grid nopolar
+set output '../plot/DiffLatencyv1v2.pdf'
+set yrange [-10:200]
+set xrange [0:750]
+set term pdf
+set style data lines
+set datafile separator ","
+set title "Mean Difference of time for requests depending on the number of clients\n between HTTP/1.1 and HTTP/2 pages of 200kB\n tested requested at the same time"
+set xlabel "Number of clients"
+set ylabel "Difference of Mean Latency (in ms)"
+set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
+set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
+
+plot	"diffv1v2.csv" using 1:4 ls 1 smooth sbezier t "HTTP/1.1-HTTP2"

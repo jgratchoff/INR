@@ -1,6 +1,6 @@
 set grid nopolar
 set output 'plot/Latency-asia(RTT=283.207).pdf'
-set yrange [200:400]
+set yrange [150:400]
 set xrange [0:750]
 set term pdf
 set style data lines

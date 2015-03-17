@@ -1,6 +1,6 @@
 set grid nopolar
 set output 'plot/Headertraffic-local(RTT=0.340).pdf'
-set yrange [0:100000]
+set yrange [0:130000]
 set xrange [0:750]
 set term pdf
 set style data lines

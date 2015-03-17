@@ -1,6 +1,6 @@
 set grid nopolar
 set output 'plot/Latency-local(RTT=148.570).pdf'
-set yrange [0:350]
+set yrange [0:400]
 set xrange [0:750]
 set term pdf
 set style data lines
