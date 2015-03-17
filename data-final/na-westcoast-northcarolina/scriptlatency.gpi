@@ -5,7 +5,7 @@ set xrange [0:750]
 set term pdf
 set style data lines
 set datafile separator ","
-set title "Mean request time HTTP/1.1 vs HTTP/2 depending on the number of\n clients and size of pages (RTT ~150ms(California))"
+set title "HTTP/1.1 vs HTTP/2 mean request time depending on the number of\n clients and size of pages (RTT ~150ms(California))"
 set xlabel "Number of clients"
 set ylabel "Mean Request time (in ms)"
 set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
