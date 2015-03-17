@@ -1,20 +1,20 @@
 set grid nopolar
-set output 'plot/Latency-local(RTT=148.570).pdf'
+set output '../plot/northcarolina/Latency-NA(RTT~150).pdf'
 set yrange [0:400]
 set xrange [0:750]
 set term pdf
 set style data lines
 set datafile separator ","
-set title "Mean time for HTTP/1.1 and HTTP/2 requests depending on the number of\n clients and the size of the pages with a RTT=148.570ms"
+set title "Mean request time HTTP/1.1 vs HTTP/2 depending on the number of\n clients and size of pages (RTT ~150ms(California))"
 set xlabel "Number of clients"
-set ylabel "Mean Latency (in ms)"
+set ylabel "Mean Request time (in ms)"
 set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
 set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
 set style line 3 lt 1 lw 3 pt 3 linecolor rgb "blue"
-set style line 4 lt 1 lw 3 pt 3  
+set style line 4 lt 1 lw 3 pt 3
 
-plot "report_http_urls_large_v2_1426493973.csv" using 1:10 ls 1 smooth sbezier t "200kB file-HTTP/2", \
-        "report_http_urls_small_v2_1426458705.csv" using 1:10 ls 2 smooth sbezier t "20kB file-HTTP/2", \
-        "report_http_urls_large_v1_1426503558.csv" using 1:10 ls 3 smooth sbezier t "200kB file-HTTP/1.1", \
-        "report_http_urls_small_v1_1426497692.csv" using 1:10 ls 4 smooth sbezier t "20kB file-HTTP/1.1"
+plot "report_http_urls_large_v2_1426493973.csv" using 1:10 ls 1 smooth sbezier t "200kB page size HTTP/2", \
+        "report_http_urls_small_v2_1426458705.csv" using 1:10 ls 2 smooth sbezier t "20kB page size HTTP/2", \
+        "report_http_urls_large_v1_1426503558.csv" using 1:10 ls 3 smooth sbezier t "200kB page size HTTP/1.1", \
+        "report_http_urls_small_v1_1426497692.csv" using 1:10 ls 4 smooth sbezier t "20kB page size HTTP/1.1"
 
