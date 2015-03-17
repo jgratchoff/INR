@@ -1,18 +1,21 @@
 set grid nopolar
-set output 'plot/Failed packets per number of clients.pdf'
+set output '../plot/plot4slides/Failed_packets_frankfurt.pdf'
 set yrange [0:400]
-set xrange [0:800]
+set xrange [0:750]
 set term pdf
 set style data lines
 set datafile separator ","
-set title "Mean number of failed packets depending on the number of clients  "
+set title "Mean number of failed request per number of clients (RTT ~6.8ms(Frankfurt))"
 set xlabel "Number of clients"
-set ylabel "Average number of packet fail"
-
-plot "report_http_urls_large_v2_1426424392.csv" using 1:14 w errorb smooth sbezier t "Large file-http2", \
-        "report_http_urls_large_v1_1426436384.csv" using 1:14 smooth sbezier t "Large file-http1", \
-        "report_http_urls_small_v2_1426421038.csv" using 1:14 smooth sbezier t "Small file-http2", \
-        "report_http_urls_small_v1_1426431907.csv" using 1:14 smooth sbezier t "Small file-http1"
+set ylabel "Mean number of failed request"
+set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
+set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
+set style line 3 lt 1 lw 3 pt 3 linecolor rgb "blue"
+set style line 4 lt 1 lw 3 pt 3 
+plot "report_http_urls_large_v2_1426424392.csv" using 1:14 ls 1 smooth sbezier t "200kB page size HTTP/2", \
+        "report_http_urls_small_v2_1426421038.csv" using 1:14 ls 2 smooth sbezier t "20kB page size HTTP/2", \
+        "report_http_urls_large_v1_1426436384.csv" using 1:14 ls 3 smooth sbezier t "200kB page size HTTP/1.1", \
+        "report_http_urls_small_v1_1426431907.csv" using 1:14 ls 4 smooth sbezier t "20kB page size HTTP/1.1"
 
 
 

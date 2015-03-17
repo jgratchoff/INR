@@ -14,7 +14,7 @@ set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
 set style line 3 lt 1 lw 3 pt 3 linecolor rgb "blue"
 set style line 4 lt 1 lw 3 pt 3  
 
-plot	"diff.csv" using 1:4 ls 1 smooth sbezier t "Frankfurt-RTT~6.8", \
-	"diff.csv" using 1:22 ls 2 smooth sbezier t "Local-RTT~0.34", \
-	"diff.csv" using 1:30 ls 3 smooth sbezier t "California-RTT~150", \
-	"diff.csv" using 1:13 ls 4 smooth sbezier t "Tokyo-RTT~285"
+plot	"diff.csv" using 1:4 ls 1 smooth sbezier t "Frankfurt-RTT~6.8ms", \
+	"diff.csv" using 1:22 ls 2 smooth sbezier t "Local-RTT~0.34ms", \
+	"diff.csv" using 1:30 ls 3 smooth sbezier t "California-RTT~150ms", \
+	"diff.csv" using 1:13 ls 4 smooth sbezier t "Tokyo-RTT~285ms"
