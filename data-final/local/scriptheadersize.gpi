@@ -5,7 +5,7 @@ set xrange [0:750]
 set term pdf
 set style data lines
 set datafile separator ","
-set title "Mean header traffic for HTTP/1.1 and HTTP/2 depending on the number of\n clients and the size of the pages"
+set title "Mean header traffic for HTTP/1.1 and HTTP/2 depending on the number of\n clients"
 set xlabel "Number of clients"
 set ylabel "Average total header size (Bytes)"
 set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
@@ -13,11 +13,8 @@ set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
 set style line 3 lt 1 lw 3 pt 3 linecolor rgb "blue"
 set style line 4 lt 1 lw 3 pt 3  
 
-plot "report_http_urls_large_v2_1426332603.csv" using 2:7 ls 1 smooth sbezier t "200kB page size HTTP/2", \
-        "report_http_urls_small_v2_1426327089.csv" using 2:7 ls 2 smooth sbezier t "20kB page size HTTP/2", \
-        "report_http_urls_large_v1_1426341585.csv" using 2:7 ls 3 smooth sbezier t "200kB page size HTTP/1.1", \
-        "report_http_urls_small_v1_1426335453.csv" using 2:7 ls 4 smooth sbezier t "20kB page size HTTP/1.1"
-
+plot "report_http_urls_large_v2_1426332603.csv" using 2:7 ls 1 smooth sbezier t "HTTP/2", \
+        "report_http_urls_large_v1_1426341585.csv" using 2:7 ls 2 smooth sbezier t "HTTP/1.1"
 
 
 
