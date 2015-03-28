@@ -5,9 +5,9 @@ set xrange [0:750]
 set term pdf
 set style data lines
 set datafile separator ","
-set title "Mean time taken for request per second for HTTP/1.1 and HTTP/2 clients \n running in parallel (RTT ~0.2ms(Local))"
+set title "Requests per second for HTTP/1.1 and HTTP/2 clients \n running in parallel (RTT ~0.2ms(Local))"
 set xlabel "Number of clients"
-set ylabel "Mean time for request per second"
+set ylabel "Requests per second"
 set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
 set style line 2 lt 1 lw 3 pt 3 linecolor rgb "blue"
 
