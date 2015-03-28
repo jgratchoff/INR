@@ -2,6 +2,12 @@
 \usepackage{multicol}
 \usepackage{graphicx,amsmath,listings,hyperref,color,appendix,geometry}
 \usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{mathtools}
+
+
+
 \begin{document} 
 \begin{figure}[!bh]
  	\begin{center}
@@ -23,20 +29,31 @@
 
 \pagenumbering{arabic}
 \newpage
-\input{sections/abstract.tex}
-\newpage
 \input{sections/introduction.tex}
+\newpage
 \input{sections/rq.tex}
-\input{sections/related.tex}
 \input{sections/scope.tex}
-\input{sections/requirements.tex}
-\input{sections/method.tex}
-\input{sections/implementation.tex}
+\newpage
+\input{sections/related.tex}
+\newpage
+\input{sections/approach_and_method.tex}
+\input{sections/approach_and_method/measurements.tex}
+%%\input{sections/approach_and_method/topology.tex}
+\input{sections/approach_and_method/client_server.tex}
+\newpage
 \input{sections/results.tex}
+\input{sections/results/header.tex}
+\input{sections/results/rtt.tex}
+\input{sections/results/server_util.tex}
+\newpage
 \input{sections/conclusions.tex}
+\newpage
 \input{sections/furtherwork.tex}
+\newpage
 \begin{thebibliography}
 \\
+\bibitem{RFC2616}
+RFC2616, Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext Transfer Protocol -- HTTP/1.1", RFC 2616, June 1999, Available at: http://www.rfc-editor.org/info/rfc2616 .[Accessed 26 Mar. 2015].
 \bibitem{RFC723x}
 RFC7230 Fielding, R., Ed., and J. Reschke, Ed., "Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing", RFC 7230, June 2014, Available at:http://www.rfc-editor.org/info/rfc7230  [Accessed 26 Mar. 2015]. \\
 RFC7231 Fielding, R., Ed., and J. Reschke, Ed., "Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content", RFC 7231, June 2014, Available at: http://www.rfc-editor.org/info/rfc7231 [Accessed 26 Mar. 2015]. \\
@@ -49,22 +66,6 @@ Hypertext Transfer Protocol version 2 (draft-ietf-httpbis-http2-17) (2015). M. B
 https://datatracker.ietf.org/doc/draft-ietf-httpbis-http2/?include\_text=1 [Accessed 26 Mar. 2015].
  \bibitem{hpack}
 HPACK - Header Compression for HTTP/2 draft-ietf-httpbis-header-compression-07 (2015). R. Peon,  H. Ruellan [online] IETF, Available at: http://tools.ietf.org/html/draft-ietf-httpbis-header-compression-07 [Accessed 26 Mar. 2015].
-\bibitem{stenberg}
-Stenberg, D. (2015). http2 explained - The HTTP/2 book. [online] Daniel.haxx.se. Available at: http://daniel.haxx.se/http2/ [Accessed 27 Mar. 2015].
-\bibitem{httpbis}
-Tools.ietf.org, (2015). Httpbis Status Pages. [online] Available at: https://tools.ietf.org/wg/httpbis/ [Accessed 27 Mar. 2015].
-\bibitem{spdy}
-Google Developers, (2015). SPDY. [online] Available at: https://developers.google.com/speed/spdy/ [Accessed 27 Mar. 2015].
-\bibitem{raymond}
-Raymond, E. (2015). The Importance of Being Textual. [online] Catb.org. Available at: http://www.catb.org/esr/writings/taoup/html/ch05s01.html [Accessed 27 Mar. 2015].
-\bibitem{curlhttp2}
-Curl.haxx.se, (2015). cURL - README.http2. [online] Available at: http://curl.haxx.se/dev/readme-http2.html [Accessed 27 Mar. 2015].
-\bibitem{wiresharkhttp2}
-Wiki.wireshark.org, (2015). HTTP2 - The Wireshark Wiki. [online] Available at: https://wiki.wireshark.org/HTTP2 [Accessed 27 Mar. 2015].
-\bibitem{breach}
-Breachattack.com, (2015). BREACH ATTACK. [online] Available at: http://breachattack.com/ [Accessed 27 Mar. 2015].
-\bibitem{crime}
-Blackhat, (2013). i A Perfect CRIME?. [online] Available at: https://media.blackhat.com/eu-13/briefings/Beery/bh-eu-13-a-perfect-crime-beery-wp.pdf [Accessed 27 Mar. 2015].
 \bibitem{google2x}
 A 2x Faster Web. (2009). [online] Chromium Blog. Available at: http://blog.chromium.org/2009/11/2x-faster-web.html [Accessed 20 Feb. 2015].
 \bibitem{servy}
@@ -75,6 +76,7 @@ Podiatry, G. (2015). Guy's Pod » Blog Archive » Not as SPDY as You Thought. [o
 Wang et al. (2014). How Speedy is SPDY?, 11th USENIX Symposium on Networked Systems Design and Implementation (NSDI ’14). [online] usenix.org. Available at:
 https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-wang\_xiao\_sophia.pdf [Accessed 20 Feb. 2015].
 \bibitem{amazon} Amazon Elastic Compute Cloud (Amazon EC2) (2015). Available at: http://aws.amazon.com/ec2/ [Accessed 20 Feb. 2015].
+\bibitem{mozilla} Firefox Beta Notes (2015). Available at: https://www.mozilla.org/en-US/firefox/36.0beta/releasenotes/ [Accessed 20 Feb. 2015].
 \bibitem{http2-imp}  HTTP/2 client/server implemenations (2015). Available at: https://github.com/http2/http2-spec/wiki/Implementations [Accessed 20 Feb. 2015].
 \bibitem{h2c-14} Hypertext Transfer Protocol version 2 draft-ietf-httpbis-http2-14 (2014). Available at: https://tools.ietf.org/html/draft-ietf-httpbis-http2-14 [Accessed 4. March 2015]
 \bibitem{nghttp} HTTP/2 experimental server (2015). Available at: https://nghttp2.org/documentation/nghttpd.1.html [Accessed 4. March 2015]
@@ -82,9 +84,8 @@ https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-wang\_xiao\_s
 \bibitem{h2load} Benchmarking tool for HTTP/2 and SPDY server (2015). Available at: https://nghttp2.org/documentation/h2load.1.html [Accessed 4. March 2015]
 \bibitem{ab} Apache HTTP server benchmarking tool (2015). Available at http://httpd.apache.org/docs/2.2/programs/ab.html [Accessed 4. March 2015]
 \bibitem{httparchive} Httparchive.org, (2015). HTTP Archive - Trends. [online] Available at: http://httparchive.org/trends.php [Accessed 11 Mar. 2015].
-\bibitem{nginx}
-Garrett, O. (2015). How NGINX Plans to Support HTTP/2 - NGINX. [online] NGINX. Available at: http://nginx.com/blog/how-nginx-plans-to-support-http2/ [Accessed 27 Mar. 2015].
-
+\bibitem{amazon-ts} amazon.com, (2015). Amazon - T2 Instances. [online] Available at: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html [Accessed 11 Mar. 2015].
+\bibitem{nghttpx} nghtt2.org, HTTP/1.1 HTTP/2 reverse proxy. [online] Available at: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html [Accessed 11 Mar. 2015].
 \end{thebibliography}
 
 
