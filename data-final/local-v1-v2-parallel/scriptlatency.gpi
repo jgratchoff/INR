@@ -1,5 +1,5 @@
 set grid nopolar
-set output '../plot/plot4slides/Latency-v1vsv2(local).pdf'
+set output '../plot/paper/Latency-v1vsv2(local~0.2ms).pdf'
 set yrange [0:400]
 set xrange [0:750]
 set term pdf
@@ -11,8 +11,8 @@ set ylabel "Mean time for request and response (in ms)"
 set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
 set style line 2 lt 1 lw 3 pt 3 linecolor rgb "blue"
 
-plot "report_http_urls_large_v2_1426527176.csv" using 2:11 ls 1 smooth sbezier t "200kB page size HTTP/2", \
-	"report_http_urls_large_v1_1426527174.csv" using 2:11 ls 2 smooth sbezier t "200kB page size HTTP/1.1", \
+plot "report_http_urls_large_v2_1426527176.csv" using 2:11 ls 1 smooth sbezier t "1600kB page size HTTP/2", \
+	"report_http_urls_large_v1_1426527174.csv" using 2:11 ls 2 smooth sbezier t "1600kB page size HTTP/1.1", \
 
 
 

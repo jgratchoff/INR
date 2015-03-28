@@ -1,0 +1,24 @@
+set grid nopolar
+set output '../plot/paper/reqps-local(RTT=0.34ms).pdf'
+set yrange [0:850]
+set xrange [0:750]
+set term pdf
+set style data lines
+set datafile separator ","
+set title "HTTP/1.1 vs HTTP/2 mean time taken for request per second \n depending on the number of\n clients and size of pages (RTT ~0.34ms(local))"
+set xlabel "Number of clients"
+set ylabel "Mean time for request per second"
+set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
+set style line 2 lt 1 lw 3 pt 3 linecolor rgb "green"
+set style line 3 lt 1 lw 3 pt 3 linecolor rgb "blue"
+set style line 4 lt 1 lw 3 pt 3  
+
+plot "report_http_urls_large_v2_1426332603.csv" using 2:4 ls 1  smooth sbezier t "1600kB page size HTTP/2", \
+	"report_http_urls_small_v2_1426327089.csv" using 2:4 ls 2 smooth sbezier t "20kB page size HTTP/2", \
+	"report_http_urls_large_v1_1426341585.csv" using 2:4 ls 3 smooth sbezier t "1600kB page size HTTP/1.1", \
+	"report_http_urls_small_v1_1426335453.csv" using 2:4 ls 4 smooth sbezier t "20kB page size HTTP/1.1"
+
+
+
+#plot "report_http_urls_large_v1_1426341585.csv" using 2:11 t "experimental" w errorb,               "" smooth sbezier t ""
+
