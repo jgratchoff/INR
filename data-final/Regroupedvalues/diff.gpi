@@ -1,12 +1,11 @@
 set grid nopolar
-set output '../plot/plot4slides/DiffLatency(4locations).pdf'
+set output '../plot/paper/DiffLatency(4locations).pdf'
 set yrange [-10:200]
 set xrange [0:750]
 set term pdf
 set style data lines
 set datafile separator ","
-
-set title "HTTP/1.1 vs HTTP/2 mean time taken for request and response \n difference depending on\n number of clients, size of pages and locations"
+set title "HTTP/1.1 vs HTTP/2 mean request and response time difference \n depending on number of clients and locations "
 set xlabel "Number of clients"
 set ylabel "Mean Request and Response time difference(ms)"
 set style line 1 lt 1 lw 3 pt 3 linecolor rgb "orange"
