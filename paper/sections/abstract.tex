@@ -1,2 +1,3 @@
 \section*{Abstract}
 \label{chap:intro}
+\textit{This paper compares the version 1.1 and 2 of the HTTP protocol. The two version have been tested with TLS enabled. The purpose is to show the difference in terms of latency, header size, bandwidth utilisation and server performance. To do that a benchmark have been performed on a native HTTP2 server (nghttp) that is able to manage HTTP/1.1 request (on apache2) thanks to a proxy (nghttpx). Clients are located around the world to represent different RTTs. The tool used for the benchmark is h2load. The results shows a clear improvement in latency and header size with HTTP/2. Moreover the server performs better and uses less resources with HTTP/2.}
