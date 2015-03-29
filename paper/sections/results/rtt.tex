@@ -5,7 +5,7 @@ In that section the RTT time seen from different locations with a growing number
 
 \subsubsection{Tokyo/Asia}
 
-The measurements in asia are performed with the highest RTT of 280 ms. The graph in Figure \ref{fig:latency-asia}  represents the data for 4 measurements by using for each HTTP version two different pages (20kB, 1600kB). The number of clients is incremented by one  from 1 to 750, while performing the measurements.
+The measurements in Asia are performed with the highest RTT of 280 ms. The graph in Figure \ref{fig:latency-asia}  represents the data for 4 measurements by using for each HTTP version two different pages (20kB, 1600kB). The number of clients is incremented by one  from 1 to 750, while performing the measurements.
 
 \begin{figure}[H]
 	\centering
@@ -14,7 +14,7 @@ The measurements in asia are performed with the highest RTT of 280 ms. The graph
 	\label{fig:latency-asia}
 \end{figure}
 
-A significant difference between both HTTP versions cannot be identified, although HTTP/2 is a few milliseconds faster during the measurements. The graph shows nearly a constant response time regardless if the number of clients increases. That can be explained by considering the rate of requests per seconds seen from the client in Tokyo. As more clients are added as more requests are beeing executed in approximately the same time. The graph in Figure \ref{fig:reqps-asia} shows that dependency.
+A significant difference between both HTTP versions cannot be identified, although HTTP/2 is a few milliseconds faster during the measurements. The graph shows nearly a constant response time regardless if the number of clients increases. That can be explained by considering the rate of requests per seconds seen from the client in Tokyo. As more clients are added as more requests are being executed in approximately the same time. The graph in Figure \ref{fig:reqps-asia} shows that dependency.
 
 \begin{figure}[H]
 	\centering
@@ -56,7 +56,7 @@ Measurements taken from a client in Frankfurt am Main/Germany represent a low la
 	\label{fig:latency-europe}
 \end{figure}
 
-Compared to the previous measurements, the RTT graph looks different. Depending on the number of clients the RTT times grow nearly proportional. It is also a clear difference between HTTP/1.1 and HTTP/2 visible. The performed HTTP/2 mesurements show significanltly less growing upto approximately 100ms for 750 clients, whereas the HTTP/1.1 RTT is for all meaurements around 30\% slower ending up in a maximum of around 150ms. The  request rate graph shown in Figure \ref{fig:reqps-frankfurt} shows a different characteristic compared to the previous measurements.
+Compared to the previous measurements, the RTT graph looks different. Depending on the number of clients the RTT times grow nearly proportional. It is also a clear difference between HTTP/1.1 and HTTP/2 visible. The performed HTTP/2 measurements show significanltly less growing upto approximately 100ms for 750 clients, whereas the HTTP/1.1 RTT is for all measurements around 30\% slower ending up in a maximum of around 150ms. The  request rate graph shown in Figure \ref{fig:reqps-frankfurt} shows a different characteristic compared to the previous measurements.
 
 \begin{figure}[H]
 	\centering
@@ -69,7 +69,7 @@ It turns out that the request rate is identical to a asymptotic curve for all me
 
 \subsubsection{Local/Amsterdam}
 
-Finally we performed measurements within the OS3 network (RTT 0.3 ms). We conducted those tests in two different ways. First we did separate measurements for each protocol version and then we conducted parallel tests in order to simulate workloads on the server for HTTP/1.1 and HTTP/2 requests simultanaeous. Figure \ref{fig:latency-local} and Figure \ref{fig:reqps-local} show the graphs for the separate measurements.
+Finally we performed measurements within the OS3 network (RTT 0.3 ms). We conducted those tests in two different ways. First we did separate measurements for each protocol version and then we conducted parallel tests in order to simulate workloads on the server for HTTP/1.1 and HTTP/2 requests simultaneous. Figure \ref{fig:latency-local} and Figure \ref{fig:reqps-local} show the graphs for the separate measurements.
 
 \begin{figure}[H]
 	\centering
