@@ -1,11 +1,11 @@
 \subsection{HTTP Round Trip Times and Request Rates}
 \label{subsec:rtt}
 
-In that section the RTT time seen from different locations with a growing number of clients is presented. Furthermore the performance in requests per second is shown. The test are shown by location ordered by decreasing distance to the server
+In that section the RTT time seen from different locations with a growing number of clients is presented. Furthermore the performance in requests per second is shown. The measurements are described by location ordered by a decreasing distance to the server
 
 \subsubsection{Tokyo/Asia}
 
-The measurements in Asia are performed with the highest RTT of 280 ms. The graph in Figure \ref{fig:latency-asia}  represents the data for 4 measurements by using for each HTTP version two different pages (20kB, 1600kB). The number of clients is incremented by one  from 1 to 750, while performing the measurements.
+The measurements in Asia are performed with the highest base RTT of 280 ms. The graph in Figure \ref{fig:latency-asia}  represents the data for 4 measurements by using for each HTTP version two different pages (20kB, 1600kB). The number of clients is incremented by one  from 1 upto 750, while performing the measurements.
 
 \begin{figure}[H]
 	\centering
@@ -23,7 +23,7 @@ A significant difference between both HTTP versions cannot be identified, althou
 	\label{fig:reqps-asia}
 \end{figure}
 
-\subsubsection{Northcarolina/US}
+\subsubsection{North Carolina/North America}
 
 The next measurements were taken from a client in North America/North Carolina with a measured base average RTT of 150ms and is shown in Figure \ref{fig:latency-na}. 
 
@@ -47,7 +47,7 @@ A slightly better request performance rate for HTTP/2 is the result of that mesu
 
 \subsubsection{Frankfurt am Main/Europe}
 
-Measurements taken from a client in Frankfurt am Main/Germany represent a low latency link with approximately 7ms of base RTT. The graph for the HTTP RTTs is shown in Figure \ref{fig:latency-europe}.
+In contrast to the previous measurements, the measurements taken from a client in Frankfurt am Main/Europe are representing a low latency link with approximately 7ms of base RTT. The graph for the HTTP RTTs is shown in Figure \ref{fig:latency-europe}.
 
 \begin{figure}[H]
 	\centering
@@ -65,9 +65,9 @@ Compared to the previous measurements, the RTT graph looks different. Depending 
 	\label{fig:reqps-frankfurt}
 \end{figure}
 
-It turns out that the request rate is identical to a asymptotic curve for all measurements. The server simply cannot handle more connection than approximately 800. That is also the reason that after 100 concurrent concurrent clients the request rate remains nearly static. It is again visible that HTTP/2 performs better compared to HTTP/1.1. The fact that the base RTT for that measurement is significantly less than in the previous measurement, leads to much more connections at the same time at the server and different performance graphs.
+It turns out that the request rate is identical to a asymptotic curve for all measurements. The server simply cannot handle more than approximately 800 concurrent connections. That is also the reason that after 100 concurrent concurrent clients the request rate remains nearly static. It is again visible that HTTP/2 performs better compared to HTTP/1.1. The fact that the base RTT for that measurement is significantly less than in the previous measurement, leads to much more connections at the same time at the server and different performance graphs.
 
-\subsubsection{Local/Amsterdam}
+\subsubsection{Amsterdam/Europe (local)}
 
 Finally we performed measurements within the OS3 network (RTT 0.3 ms). We conducted those tests in two different ways. First we did separate measurements for each protocol version and then we conducted parallel tests in order to simulate workloads on the server for HTTP/1.1 and HTTP/2 requests simultaneous. Figure \ref{fig:latency-local} and Figure \ref{fig:reqps-local} show the graphs for the separate measurements.
 
@@ -85,7 +85,7 @@ Finally we performed measurements within the OS3 network (RTT 0.3 ms). We conduc
 	\label{fig:reqps-local}
 \end{figure}
 
-The graph characteristics is similar to the low latency link in Frankfurt. The difference between both measurements is the number of client needed to reach the server limit in terms or requests per second. The local measurement already reaches that limit at approximately 40 clients. That can be explained by the lower latency within the OS3 network.
+The graph characteristics is similar to the low latency link in Frankfurt. The difference between both measurements is the number of client needed to reach the server limit in terms or requests per second. The local measurement already reaches that limit at approximately 40 clients. That can be explained by the lower latency within the OS3 network resulting in a much faster connection establishment.
 \\
 \\
 As a last measurement we conducted parallel tests for HTTP/1.1 and HTTP/2. The related graphs are shown in Figure \ref{fig:latency-localv1vsv2} and Figure \ref{fig:reqps-localv1vsv2}
@@ -104,11 +104,11 @@ As a last measurement we conducted parallel tests for HTTP/1.1 and HTTP/2. The r
 	\label{fig:reqps-localv1vsv2}
 \end{figure}
  
-The final result of the local parallel measurements shows again a significant difference between HTTP RTT times of both versions. HTTP/2 is clearly faster than HTTP/1.1. Figure \ref{fig:latency-localv1vsv2} shows a peak RTT for HTTP/1.1 at around 550 clients. At that moment the last HTTP/2 measurement was finished and afterwards the server was only busy with responding to HTTP/1.1 request. That is the reason for the decreasing RTT for HTTP/1.1 and the increasing number of requests per second starting  from that point.
+The results of the local parallel measurements is showing again a significant difference between HTTP RTT times of both versions. HTTP/2 is clearly faster than HTTP/1.1. Figure \ref{fig:latency-localv1vsv2} shows a peak RTT for HTTP/1.1 at around 550 clients. At that moment the last HTTP/2 measurement was finished and afterwards the server was only busy with responding to HTTP/1.1 request. That is the reason for the decreasing RTT for HTTP/1.1 and the increasing number of requests per second starting  from that point.
 
 \subsubsection{Mesurement analysis}
 
-We can conclude that for almost all measurements the RTT time for HTTP/2 is significantly faster than for HTTP/1.1. That result is independent of the requested page size and also from the distance between client and server. For high latency links we discovered different characteristics regarding the request rate compared to low latency links (Frankfurt/Local). On low latency links (ca. 10ms) the number of requests per seconds grows much faster, which results in a quick saturation of the server to its maximum number of parallel requests. For high latency links a constant increase of RTT and request rate was measured for an increasing number of clients. In Figure \ref{fig:latency-all} all measured differences between HTTP/1.1 and HTTP/2 for all locations is shown. Lines above zero (y-axis) show a faster RTT for HTTP/2.
+We can conclude that for almost all measurements the RTT time for HTTP/2 is significantly faster than for HTTP/1.1. That result is independent of the requested page size and also from the distance between client and server. For high latency links we discovered different characteristics regarding RTT and request rate compared to low latency links (Europe/Local). On low latency links (\textless 10ms) the number of requests per seconds grows much faster, which results in a quick saturation of the server to its maximum number of parallel requests. For high latency (Asia/North America) links a constant increase of RTT and request rate was measured for an increasing number of clients. In Figure \ref{fig:latency-all} all measured differences between HTTP/1.1 and HTTP/2 for all locations is shown. Lines above zero (y-axis) show a faster RTT for HTTP/2.
 
 \begin{figure}[H]
 	\centering
@@ -117,3 +117,4 @@ We can conclude that for almost all measurements the RTT time for HTTP/2 is sign
 	\label{fig:latency-all}
 \end{figure}
 
+\newpage

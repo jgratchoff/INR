@@ -1,16 +1,16 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Research Questions}{}% 2
-\BOOKMARK [1][-]{section.3}{Scope}{}% 3
-\BOOKMARK [1][-]{section.4}{Literature review}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{HTTP/1.1 drawbacks}{section.4}% 5
-\BOOKMARK [2][-]{subsection.4.2}{HTTP/2 improvements}{section.4}% 6
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Binary format}{subsection.4.2}% 7
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Multiplexing and priority}{subsection.4.2}% 8
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Header compression}{subsection.4.2}% 9
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Flow control}{subsection.4.2}% 10
-\BOOKMARK [3][-]{subsubsection.4.2.5}{Server push}{subsection.4.2}% 11
-\BOOKMARK [2][-]{subsection.4.3}{Related work}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.4}{Conclusion}{section.4}% 13
+\BOOKMARK [1][-]{section.3}{Literature review}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{HTTP/1.1 drawbacks}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{HTTP/2 improvements}{section.3}% 5
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Binary format}{subsection.3.2}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Multiplexing and priority}{subsection.3.2}% 7
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Header compression}{subsection.3.2}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Flow control}{subsection.3.2}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Server push}{subsection.3.2}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Related work}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.4}{Conclusion}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Scope}{}% 13
 \BOOKMARK [1][-]{section.5}{Approach and Methods}{}% 14
 \BOOKMARK [2][-]{subsection.5.1}{Measurement}{section.5}% 15
 \BOOKMARK [3][-]{subsubsection.5.1.1}{Measurement Parameter}{subsection.5.1}% 16
@@ -21,10 +21,12 @@
 \BOOKMARK [2][-]{subsection.6.1}{HTTP header size}{section.6}% 21
 \BOOKMARK [2][-]{subsection.6.2}{HTTP Round Trip Times and Request Rates}{section.6}% 22
 \BOOKMARK [3][-]{subsubsection.6.2.1}{Tokyo/Asia}{subsection.6.2}% 23
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Northcarolina/US}{subsection.6.2}% 24
+\BOOKMARK [3][-]{subsubsection.6.2.2}{North Carolina/North America}{subsection.6.2}% 24
 \BOOKMARK [3][-]{subsubsection.6.2.3}{Frankfurt am Main/Europe}{subsection.6.2}% 25
-\BOOKMARK [3][-]{subsubsection.6.2.4}{Local/Amsterdam}{subsection.6.2}% 26
+\BOOKMARK [3][-]{subsubsection.6.2.4}{Amsterdam/Europe \(local\)}{subsection.6.2}% 26
 \BOOKMARK [3][-]{subsubsection.6.2.5}{Mesurement analysis}{subsection.6.2}% 27
 \BOOKMARK [2][-]{subsection.6.3}{Server Utilization}{section.6}% 28
 \BOOKMARK [1][-]{section.7}{Conclusions}{}% 29
-\BOOKMARK [1][-]{section.8}{Further Work}{}% 30
+\BOOKMARK [1][-]{section.8}{Future Work}{}% 30
+\BOOKMARK [1][-]{section*.2}{References}{}% 31
+\BOOKMARK [1][-]{section*.4}{Appendices}{}% 32
