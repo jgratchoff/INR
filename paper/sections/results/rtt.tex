@@ -34,16 +34,14 @@ The next measurements were taken from a client in North America/North Carolina w
 	\label{fig:latency-na}
 \end{figure}
 
-The graph shows for HTTP/2 measurements, that the HTTP RTT is nearly almost equal to the measured base RTT. That means there is almost no jitter measurable and the RTT is constant for HTTP/2 requests regardless if the number of clients is raised or not. Moreover we see a growing HTTP/1.1 RTT starting from approximately 400 concurrent clients upwards. Figure \ref{fig:reqps-na} shows the corresponding request per second rate graph.
+The graph shows for HTTP/2 measurements, that the HTTP RTT is nearly almost equal to the measured base RTT. That means there is almost no jitter measurable and the RTT is constant for HTTP/2 requests regardless if the number of clients is raised or not. Moreover we see a growing HTTP/1.1 RTT starting from approximately 400 concurrent clients upwards. Figure \ref{fig:reqps-na} shows the corresponding request per second rate graph. A slightly better request performance rate for HTTP/2 is the result of that mesurement.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1,trim=0.0cm .0cm .0cm .0cm,clip]{images/reqps-na.pdf}
 	\caption{Mean Requests per second for North Carolina/US}
 	\label{fig:reqps-na}
-\end{figure}
-
-A slightly better request performance rate for HTTP/2 is the result of that mesurement. 
+\end{figure} 
 
 \subsubsection{Frankfurt am Main/Europe}
 
@@ -56,7 +54,7 @@ In contrast to the previous measurements, the measurements taken from a client i
 	\label{fig:latency-europe}
 \end{figure}
 
-Compared to the previous measurements, the RTT graph looks different. Depending on the number of clients the RTT times grow nearly proportional. It is also a clear difference between HTTP/1.1 and HTTP/2 visible. The performed HTTP/2 measurements show significanltly less growing upto approximately 100ms for 750 clients, whereas the HTTP/1.1 RTT is for all measurements around 30\% slower ending up in a maximum of around 150ms. The  request rate graph shown in Figure \ref{fig:reqps-frankfurt} shows a different characteristic compared to the previous measurements.
+Compared to the previous measurements, the RTT graph looks different. Depending on the number of clients the RTT times grow nearly proportional. It is also a clear difference between HTTP/1.1 and HTTP/2 visible. The performed HTTP/2 measurements show significanltly less growing up to approximately 100ms for 750 clients, whereas the HTTP/1.1 RTT is for all measurements around 30\% slower ending up in a maximum of around 150ms. The  request rate graph shown in Figure \ref{fig:reqps-frankfurt} shows a different characteristic compared to the previous measurements.
 
 \begin{figure}[H]
 	\centering
@@ -65,7 +63,7 @@ Compared to the previous measurements, the RTT graph looks different. Depending 
 	\label{fig:reqps-frankfurt}
 \end{figure}
 
-It turns out that the request rate is identical to a asymptotic curve for all measurements. The server simply cannot handle more than approximately 800 concurrent connections. That is also the reason that after 100 concurrent concurrent clients the request rate remains nearly static. It is again visible that HTTP/2 performs better compared to HTTP/1.1. The fact that the base RTT for that measurement is significantly less than in the previous measurement, leads to much more connections at the same time at the server and different performance graphs.
+It turns out that the request rate is identical to a asymptotic curve for all measurements. The server simply cannot handle more than approximately 800 concurrent connections. That is also the reason that after 100 concurrent clients the request rate remains nearly static. It is again visible that HTTP/2 performs better compared to HTTP/1.1. The fact that the base RTT for that measurement is significantly less than in the previous one leads to much more connections at the same time at the server and different performance graphs.
 
 \subsubsection{Amsterdam/Europe (local)}
 
