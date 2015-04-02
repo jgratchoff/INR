@@ -1,7 +1,7 @@
 \subsection{Measurement}
 \subsubsection{Measurement Parameter}
 \label{subsec:measurements}
-To perform various measurements that reflect realistic scenarios a large web content provider will encounter, a topology consisting of several components was composed. As HTTP client machines, Amazon AWS microinstance VMs \cite{amazon} located at different geographical locations (Europe, North America and Asia) are used. Measurements taken from clients located in different geographical areas ensure to have different orders of magnitudes of Round Trip Times towards the destination web server located in Amsterdam. On server side two TLS enabled webserver instances are running on one physical machnine in order to conduct measurements for both protocols - HTTP/1.1 and HTTP/2. Two reference HTML pages of different sizes and different numbers of statically linked resources have been created to be compared. These pages reflect the sizes that can be encountered in most common websites and has been derived from top 100 websites statistics \cite{httparchive}. The appropriate web page sizes including the number of referenced resources (URLs) are listed in Table \ref{table:pages}.
+To perform various measurements that reflect realistic scenarios a large web content provider will encounter, a topology consisting of several components was composed. As HTTP client machines, Amazon AWS microinstance VMs \cite{amazon} located at different geographical locations (Europe, North America and Asia) are used. Measurements taken from clients located in different geographical areas ensure having different orders of magnitudes of Round Trip Times towards the destination web server located in Amsterdam. On server side two TLS enabled web server instances are running on one physical machine in order to conduct measurements for both protocols - HTTP/1.1 and HTTP/2. Two reference HTML pages of different sizes and different numbers of statically linked resources have been created to be compared. These pages reflect the sizes that can be encountered in most common websites and were derived from top 100 websites statistics \cite{httparchive}. The appropriate web page sizes including the number of referenced resources (URLs) are listed in Table \ref{table:pages}.
 
 \begin{table}[h]
 	\centering
@@ -18,12 +18,12 @@ large.html &  1600 & 54 \\
 \end{table}
 
 So far, we have defined different static parameters that will be applied while performing the measurement. These parameters include different Round Trip Times (RTTs) and different web page sizes.  
-To simulate varying and realistic load scenarios on the server, the number of clients and thereby the number of requests towards the web servers is incremented during each test starting from one client upto maximal 750 clients in parallel.
+To simulate varying and realistic load scenarios on the server, the number of clients and thereby the number of requests towards the web servers is incremented during each test starting from one client up to a maximum of 750 clients in parallel.
 \\  
 \subsubsection{Measurement Tools}
 It is essential to choose and implement the right tool and method to measure the response/request times characteristics of the HTTP/1.1 and HTTP/2 protocol and to be able to compare them with each other. Thus, the benchmarking tool was chosen carefully and with respect to retrieve accurate measurement data that can be used to compare both HTTP versions with each other. 
-H2load \cite{h2load} was elected as the best candidate for that purpose. It has been developed to run benchmarking tests against HTTP/2 enabled web servers. 
-It can also be used to conduct measurements against HTTP/1.1 enabled web servers if, like in that case, a HTTP/2 - HTTP/1.1 reverse proxy is used that is capable to translate HTTP/2 requests into HTTP/1.1 requests on server side. 
+H2load \cite{h2load} was elected as the best candidate for that purpose. It was developed to run benchmarking tests against HTTP/2 enabled web servers. 
+It can also be used to conduct measurements against HTTP/1.1 enabled web servers if, like in that case, a HTTP/2 - HTTP/1.1 reverse proxy is used that is capable of translating HTTP/2 requests into HTTP/1.1 requests on server side. 
 It is possible to start h2load with a file option, that includes a list of URIs that each measurement will request in parallel. H2load returns after each measurement round accurate and valuable data, like the retrieved  amount of header and body data in bytes per request. Furthermore it returns the minimum, maximum and mean round trip time for each web page request and the actual performance in requests/second. 
 \\
 \subsubsection{Measurement Methods}
